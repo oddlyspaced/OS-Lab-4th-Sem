@@ -6,7 +6,7 @@
 int main() {
 	char s_file[20], d_file[20];
 	printf("\nEnter source filename: ");
-	scanf("%s", &s_file);
+	scanf("%s", s_file);
 
 	int s_desc = open(s_file, O_RDONLY);
 	if (s_desc < 0) {
@@ -15,7 +15,7 @@ int main() {
 		return 1;
 	}
 	printf("\nEnter destination filename: ");
-	scanf("%s", &d_file);
+	scanf("%s", d_file);
 	int d_desc = open(d_file, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	if (d_desc < 0) {
 		// unable to create new file
